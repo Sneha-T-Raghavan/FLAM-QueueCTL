@@ -53,7 +53,7 @@ Run commands in CMD CLI env
 
 **1. Enqueue job**
 
-Attribute Explanation␣␣
+Attribute Explanation
 -  --id : Needs to be unique for every job
 - --max-retries: Maximum number of times it will be requed automatically
 - --priority: Priority of task, lower number is higher priority
@@ -66,32 +66,35 @@ Attribute Explanation␣␣
 Example: queuectl enqueue --id job1  --cmd "python -c "print(42)"" --max-retries 2
 
 **2. Start Worker(s)**
-queuectl worker start --count <number of workers to be started>
 
+queuectl worker start --count <number of workers to be started>
 Example: queuectl worker start --count 3
 
 **3. Stop Workers**
+
 Ctrl + C
 
 **4. Check System Status**
+
 queuectl status
 
 **5. List Jobs by Status**
-queuectl list --state <status>
 
+queuectl list --state <status>
 Example: queuectl list --state pending
 
 **6. Check DLQ**
+
 queuectl dlq list
 
 **7. Retry DLQ Job**
-queuectl dlq retry <id>
 
+queuectl dlq retry <id>
 Example: queuectl dlq retry job1
 
 **8. Update Configuration**
-queuectl config set <attribute> <number>
 
+queuectl config set <attribute> <number>
 Examples: 
 - queuectl config set backoff_base 3
 - queuectl config set max_retries_default 4
