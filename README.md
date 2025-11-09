@@ -51,44 +51,45 @@ Each worker continuously polls for pending jobs (ordered by priority and schedul
 # Syntax and Usage Examples
 Run commands in CMD CLI env
 
-1. Enqueue job
+**1. Enqueue job**
 
 Attribute Explanation␣␣
---id : Needs to be unique for every job␣␣
---max-retries: Maximum number of times it will be requed automatically␣␣
---priority: Priority of task, lower number is higher priority␣␣
- --delay: For delayed execution by certain amount of time␣␣
+-  --id : Needs to be unique for every job
+- --max-retries: Maximum number of times it will be requed automatically
+- --priority: Priority of task, lower number is higher priority
+-  --delay: For delayed execution by certain amount of time
 
-- queuectl enqueue --id <id>  --cmd "python -c "<command to be executed>"" --max-retries <max retries> --priority <number>    
-
+**Syntax:** 
+-queuectl enqueue --id <id>  --cmd "python -c "<command to be executed>"" --max-retries <max retries> --priority <number>    
 - queuectl enqueue --id longjob6 --cmd "python <filename>.py" --max-retries 0
 
 Example: queuectl enqueue --id job1  --cmd "python -c "print(42)"" --max-retries 2
 
-2. Start Worker(s)
+**2. Start Worker(s)**
 queuectl worker start --count <number of workers to be started>
 
 Example: queuectl worker start --count 3
 
-3. Stop Workers
+**3. Stop Workers**
+Ctrl + C
 
-4. Check System Status
+**4. Check System Status**
 queuectl status
 
-5. List Jobs by Status 
+**5. List Jobs by Status**
 queuectl list --state <status>
 
 Example: queuectl list --state pending
 
-6. Check DLQ
+**6. Check DLQ**
 queuectl dlq list
 
-7. Retry DLQ Job
+**7. Retry DLQ Job**
 queuectl dlq retry <id>
 
 Example: queuectl dlq retry job1
 
-8. Update Configuration
+**8. Update Configuration**
 queuectl config set <attribute> <number>
 
 Examples: 
