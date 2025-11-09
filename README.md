@@ -102,17 +102,17 @@ Examples:
 
 # Quick Demo
 
--> Enqueue jobs
+-> Enqueue jobs<br>
 queuectl enqueue --id fast --cmd "python -c \"print('fast job')\"" --priority 1
 queuectl enqueue --id slow --cmd "python sleep30.py" --priority 5 --delay 10s
 
--> Start 2 workers
+-> Start 2 workers<br>
 queuectl worker start --count 2
 
--> Check system status
+-> Check system status<br>
 queuectl status
 
--> View job logs
+-> View job logs<br>
 type logs\fast.log
 
 
