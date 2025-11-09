@@ -22,6 +22,21 @@ Each worker continuously polls for pending jobs (ordered by priority and schedul
  - Configurable retry count and backoff base
  - Graceful worker shutdown
  - User-friendly CLI interface
+## Project Structure
+queuectl/
+├─ src/
+│  └─ queuectl/
+│     ├─ cli.py
+│     ├─ config.py
+│     ├─ db.py
+│     ├─ models.py
+│     ├─ repository.py
+│     ├─ worker.py
+│     └─ utils.py
+├─ tests/
+├─ README.md
+├─ pyproject.toml
+└─ queue.db (runtime generated)
 
 ## Setup Instructions
 
@@ -29,16 +44,16 @@ Each worker continuously polls for pending jobs (ordered by priority and schedul
 2. Run: pip install -e .
 3. Run: queuectl config get
 
-## Default Cofig Settings 
-- Backoff Base : 2
-- Max Retries Default : 3
-- Timeout Seconds : 20 
+## Default Config Settings 
+- Backoff Base: 2
+- Max Retries Default: 3
+- Timeout Seconds: 20 
 
 ## Command Reference
 
 | **#** | **Action** | **Syntax** | **Example** |
 |:--:|:--|:--|:--|
-| **1** | Enqueue Job | `queuectl enqueue --id <id> --cmd "python -c "<command>"" --max-retries <n> --priority <p>` | `queuectl enqueue --id job1 --cmd "python -c "print(42)"" --max-retries 2`<br>`queuectl enqueue --id longjob6 --cmd "python script.py" --max-retries 0` |
+| **1** | Enqueue Job | `queuectl enqueue --id <id> --cmd "python -c "<command>"" --max-retries <n> --priority <p>` | `queuectl enqueue --id job1 --cmd "python -c 'print(42)'" --max-retries 2` <br>`queuectl enqueue --id longjob6 --cmd "python script.py" --max-retries 0` |
 | **2** | Start Worker(s) | `queuectl worker start --count <n>` | `queuectl worker start --count 3` |
 | **3** | Stop Workers | *(Keyboard shortcut)* | `Ctrl + C` |
 | **4** | Check System Status | `queuectl status` | *(Displays total jobs in each state)* |
