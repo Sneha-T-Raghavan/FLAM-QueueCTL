@@ -24,17 +24,16 @@ Each worker continuously polls for pending jobs (ordered by priority and schedul
  - User-friendly CLI interface
 
 # Project Structure
-├──queuectl/
-    ├── cli.py
-    ├── config.py
-    ├── worker.py 
-    ├── repository.py 
-    ├── db.py 
-    ├── utils.py 
-    ├── models.py
-    ├── logs/ 
-├──README.md
-├──pyproject.toml
+├──queuectl/<br>
+    ├── cli.py<br>
+    ├── config.py<br>
+    ├── worker.py <br>
+    ├── repository.py <br>
+    ├── db.py <br>
+    ├── utils.py <br>
+    ├── models.py<br>
+├──README.md<br>
+├──pyproject.toml<br>
 
 
 # Setup Instructions
