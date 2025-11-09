@@ -48,57 +48,19 @@ Each worker continuously polls for pending jobs (ordered by priority and schedul
 - Max Retries Default : 3␣␣
 - Timeout Seconds : 20 ␣␣
 
-# Syntax and Usage Examples
-Run commands in CMD CLI env
+## 🧩 Command Reference
 
-**1. Enqueue job**
+| **#** | **Action** | **Syntax** | **Example** |
+|:--:|:--|:--|:--|
+| **1** | **Enqueue Job** | `queuectl enqueue --id <id> --cmd "python -c \"<command>\"" --max-retries <n> --priority <p>` | `queuectl enqueue --id job1 --cmd "python -c \"print(42)\"" --max-retries 2`<br>`queuectl enqueue --id longjob6 --cmd "python script.py" --max-retries 0` |
+| **2** | **Start Worker(s)** | `queuectl worker start --count <n>` | `queuectl worker start --count 3` |
+| **3** | **Stop Workers** | *(Keyboard shortcut)* | `Ctrl + C` |
+| **4** | **Check System Status** | `queuectl status` | *(Displays total jobs in each state)* |
+| **5** | **List Jobs by Status** | `queuectl list --state <pending|processing|completed|dead>` | `queuectl list --state pending` |
+| **6** | **Check Dead Letter Queue (DLQ)** | `queuectl dlq list` | *(Lists failed jobs after max retries)* |
+| **7** | **Retry Job from DLQ** | `queuectl dlq retry <id>` | `queuectl dlq retry job1` |
+| **8** | **Update Configuration** | `queuectl config set <key> <value>` | `queuectl config set backoff_base 3`<br>`queuectl config set max_retries_default 4`<br>`queuectl config set timeout_seconds 30` |
 
-Attribute Explanation
--  --id : Needs to be unique for every job
-- --max-retries: Maximum number of times it will be requed automatically
-- --priority: Priority of task, lower number is higher priority
--  --delay: For delayed execution by certain amount of time
-
-**Syntax:** <br>
--queuectl enqueue --id <id>  --cmd "python -c "<command to be executed>"" --max-retries <max retries> --priority <number>    
-- queuectl enqueue --id longjob6 --cmd "python <filename>.py" --max-retries 0
-
-Example: queuectl enqueue --id job1  --cmd "python -c "print(42)"" --max-retries 2
-
-**2. Start Worker(s)**
-
-queuectl worker start --count <number of workers to be started><br>
-Example: queuectl worker start --count 3
-
-**3. Stop Workers**
-
-Ctrl + C
-
-**4. Check System Status**
-
-queuectl status
-
-**5. List Jobs by Status**
-
-queuectl list --state <status><br>
-Example: queuectl list --state pending
-
-**6. Check DLQ**
-
-queuectl dlq list
-
-**7. Retry DLQ Job**
-
-queuectl dlq retry <id><br>
-Example: queuectl dlq retry job1
-
-**8. Update Configuration**
-
-queuectl config set <attribute> <number>
-Examples: 
-- queuectl config set backoff_base 3
-- queuectl config set max_retries_default 4
-- queuectl config set timeout_seconds 30
 
 # Quick Demo
 
