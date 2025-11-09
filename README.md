@@ -52,14 +52,14 @@ Each worker continuously polls for pending jobs (ordered by priority and schedul
 
 | **#** | **Action** | **Syntax** | **Example** |
 |:--:|:--|:--|:--|
-| **1** | **Enqueue Job** | `queuectl enqueue --id <id> --cmd "python -c \"<command>\"" --max-retries <n> --priority <p>` | `queuectl enqueue --id job1 --cmd "python -c \"print(42)\"" --max-retries 2`<br>`queuectl enqueue --id longjob6 --cmd "python script.py" --max-retries 0` |
-| **2** | **Start Worker(s)** | `queuectl worker start --count <n>` | `queuectl worker start --count 3` |
-| **3** | **Stop Workers** | *(Keyboard shortcut)* | `Ctrl + C` |
-| **4** | **Check System Status** | `queuectl status` | *(Displays total jobs in each state)* |
-| **5** | **List Jobs by Status** | `queuectl list --state <pending|processing|completed|dead>` | `queuectl list --state pending` |
-| **6** | **Check Dead Letter Queue (DLQ)** | `queuectl dlq list` | *(Lists failed jobs after max retries)* |
-| **7** | **Retry Job from DLQ** | `queuectl dlq retry <id>` | `queuectl dlq retry job1` |
-| **8** | **Update Configuration** | `queuectl config set <key> <value>` | `queuectl config set backoff_base 3`<br>`queuectl config set max_retries_default 4`<br>`queuectl config set timeout_seconds 30` |
+| **1** | Enqueue Job | `queuectl enqueue --id <id> --cmd "python -c "<command>"" --max-retries <n> --priority <p>` | `queuectl enqueue --id job1 --cmd "python -c "print(42)"" --max-retries 2`<br>`queuectl enqueue --id longjob6 --cmd "python script.py" --max-retries 0` |
+| **2** | Start Worker(s) | `queuectl worker start --count <n>` | `queuectl worker start --count 3` |
+| **3** | Stop Workers | *(Keyboard shortcut)* | `Ctrl + C` |
+| **4** | Check System Status | `queuectl status` | *(Displays total jobs in each state)* |
+| **5** | List Jobs by Status | `queuectl list --state `| `queuectl list --state pending` |
+| **6** | Check Dead Letter Queue (DLQ) | `queuectl dlq list` | *(Lists failed jobs after max retries)* |
+| **7** | Retry Job from DLQ | `queuectl dlq retry <id>` | `queuectl dlq retry job1` |
+| **8** | Update Configuration | `queuectl config set <key> <value>` | `queuectl config set backoff_base 3`<br>`queuectl config set max_retries_default 4`<br>`queuectl config set timeout_seconds 30` |
 
 
 # Quick Demo
