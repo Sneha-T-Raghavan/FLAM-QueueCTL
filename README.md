@@ -23,20 +23,20 @@ Each worker continuously polls for pending jobs (ordered by priority and schedul
  - Graceful worker shutdown
  - User-friendly CLI interface
 ## Project Structure
-queuectl/
-├─ src/
-│  └─ queuectl/
-│     ├─ cli.py
-│     ├─ config.py
-│     ├─ db.py
-│     ├─ models.py
-│     ├─ repository.py
-│     ├─ worker.py
-│     └─ utils.py
-├─ tests/
-├─ README.md
-├─ pyproject.toml
-└─ queue.db (runtime generated)
+queuectl/<br>
+├─ src/<br>
+│  └─ queuectl/<br>
+│     ├─ cli.py<br>
+│     ├─ config.py<br>
+│     ├─ db.py<br>
+│     ├─ models.py<br>
+│     ├─ repository.py<br>
+│     ├─ worker.py<br>
+│     └─ utils.py<br>
+├─ tests/<br>
+├─ README.md<br>
+├─ pyproject.toml<br>
+└─ queue.db (runtime generated)<br>
 
 ## Setup Instructions
 
