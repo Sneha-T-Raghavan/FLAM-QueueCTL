@@ -1,10 +1,10 @@
-## QueueCTL
+# QueueCTL
 
 
-# Objective
+## Objective
 QueueCTL is a CLI-based job queue system for managing background jobs, handling retries, and maintaining a Dead Letter Queue (DLQ) for permanently failed jobs. It ensures job persistence, concurrent worker execution, and graceful shutdown behavior suitable for production-like environments.
 
-# System Overview
+## System Overview
 QueueCTL consists of three core components:
 
 - **Job Repository (SQLite)** – Stores all job metadata (state, attempts, schedule, DLQ, etc.)
@@ -13,7 +13,7 @@ QueueCTL consists of three core components:
 
 Each worker continuously polls for pending jobs (ordered by priority and schedule), executes them, and updates the database. Failed jobs are retried using exponential backoff until `max_retries` is reached, after which they move to the Dead Letter Queue (DLQ).
 
-# Features
+## Features
  - Enqueue and manage background jobs
  - Parallel worker execution with locking
  - Retry mechanism with exponential backoff
@@ -23,13 +23,13 @@ Each worker continuously polls for pending jobs (ordered by priority and schedul
  - Graceful worker shutdown
  - User-friendly CLI interface
 
-# Setup Instructions
+## Setup Instructions
 
 1. Clone repository
 2. Run: pip install -e .
 3. Run: queuectl config get
 
-# Default Cofig Settings 
+## Default Cofig Settings 
 - Backoff Base : 2
 - Max Retries Default : 3
 - Timeout Seconds : 20 
@@ -48,7 +48,7 @@ Each worker continuously polls for pending jobs (ordered by priority and schedul
 | **8** | Update Configuration | `queuectl config set <key> <value>` | `queuectl config set backoff_base 3`<br>`queuectl config set max_retries_default 4`<br>`queuectl config set timeout_seconds 30` |
 
 
-# Quick Demo
+## Quick Demo
 
 -> Enqueue jobs<br>
 queuectl enqueue --id fast --cmd "python -c \"print('fast job')\"" --priority 1
@@ -64,5 +64,5 @@ queuectl status
 type logs\fast.log
 
 
-# Author
+## Author
 Sneha T Raghavan
