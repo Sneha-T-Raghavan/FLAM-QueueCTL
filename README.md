@@ -59,7 +59,7 @@ Attribute Explanation
 - --priority: Priority of task, lower number is higher priority
 -  --delay: For delayed execution by certain amount of time
 
-**Syntax:** 
+**Syntax:** <br>
 -queuectl enqueue --id <id>  --cmd "python -c "<command to be executed>"" --max-retries <max retries> --priority <number>    
 - queuectl enqueue --id longjob6 --cmd "python <filename>.py" --max-retries 0
 
@@ -67,7 +67,7 @@ Example: queuectl enqueue --id job1  --cmd "python -c "print(42)"" --max-retries
 
 **2. Start Worker(s)**
 
-queuectl worker start --count <number of workers to be started>
+queuectl worker start --count <number of workers to be started><br>
 Example: queuectl worker start --count 3
 
 **3. Stop Workers**
@@ -80,7 +80,7 @@ queuectl status
 
 **5. List Jobs by Status**
 
-queuectl list --state <status>
+queuectl list --state <status><br>
 Example: queuectl list --state pending
 
 **6. Check DLQ**
@@ -89,7 +89,7 @@ queuectl dlq list
 
 **7. Retry DLQ Job**
 
-queuectl dlq retry <id>
+queuectl dlq retry <id><br>
 Example: queuectl dlq retry job1
 
 **8. Update Configuration**
