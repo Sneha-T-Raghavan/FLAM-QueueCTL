@@ -1,0 +1,6 @@
+Metadata-Version: 2.4
+Name: queuectl
+Version: 0.1.0
+Summary: CLI-based background job queue with retries and DLQ
+Requires-Python: >=3.9
+Requires-Dist: click
