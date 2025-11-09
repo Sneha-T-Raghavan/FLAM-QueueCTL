@@ -40,32 +40,30 @@ Each worker continuously polls for pending jobs (ordered by priority and schedul
 # Setup Instructions
 
 1. Clone repository
-2. pip install -e .
-3. queuectl config get
+2. Run: pip install -e .
+3. Run: queuectl config get
 
 # Default Cofig Settings 
-Backoff Base : 2
-Max Retries Default : 3
-Timeout Seconds : 20 
-
+- Backoff Base : 2␣␣
+- Max Retries Default : 3␣␣
+- Timeout Seconds : 20 ␣␣
 
 # Syntax and Usage Examples
 Run commands in CMD CLI env
 
 1. Enqueue job
 
-Attribute Explanation
---id : Needs to be unique for every job
---max-retries: Maximum number of times it will be requed automatically
---priority: Priority of task, lower number is higher priority
- --delay: For delayed execution by certain amount of time
+Attribute Explanation␣␣
+--id : Needs to be unique for every job␣␣
+--max-retries: Maximum number of times it will be requed automatically␣␣
+--priority: Priority of task, lower number is higher priority␣␣
+ --delay: For delayed execution by certain amount of time␣␣
 
-queuectl enqueue --id <id>  --cmd "python -c '<command to be executed>'" --max-retries <max retries> --priority <number>    
+- queuectl enqueue --id <id>  --cmd "python -c "<command to be executed>"" --max-retries <max retries> --priority <number>    
 
-Enqueue Multi-Line Commands Run as File
-queuectl enqueue --id longjob6 --cmd "python <filename>.py" --max-retries 0
+- queuectl enqueue --id longjob6 --cmd "python <filename>.py" --max-retries 0
 
-Example: queuectl enqueue --id job1  --cmd "python -c 'print(42)'" --max-retries 2
+Example: queuectl enqueue --id job1  --cmd "python -c "print(42)"" --max-retries 2
 
 2. Start Worker(s)
 queuectl worker start --count <number of workers to be started>
