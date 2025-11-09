@@ -44,11 +44,11 @@ Each worker continuously polls for pending jobs (ordered by priority and schedul
 3. Run: queuectl config get
 
 # Default Cofig Settings 
-- Backoff Base : 2␣␣
-- Max Retries Default : 3␣␣
-- Timeout Seconds : 20 ␣␣
+- Backoff Base : 2
+- Max Retries Default : 3
+- Timeout Seconds : 20 
 
-## 🧩 Command Reference
+## Command Reference
 
 | **#** | **Action** | **Syntax** | **Example** |
 |:--:|:--|:--|:--|
